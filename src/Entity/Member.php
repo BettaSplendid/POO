@@ -4,11 +4,22 @@ namespace App\src\Entity;
 
 // use App\Interface\UserInterface;
 
+
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\GeneratedValue;
+
+/** @Entity */
 abstract class Member
 // abstract class Member implements UserInterface
 {
-
-    private string $id;
+    /**
+     * @Id
+     * @Column(type="integer")
+     * @GeneratedValue
+     */
+    private $id;
     private string $lastname;
     private string $firstname;
 

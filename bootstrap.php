@@ -21,7 +21,7 @@ $conn = array(
     'user'     => 'root',
     'password' => '',
     'dbname'   => 'tp_php_poo',
-    'host'     => 'localhost'
+    'host'     => '127.0.0.1'
 );
 
 // obtaining the entity manager
