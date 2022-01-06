@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity;
+namespace App\src\Entity;
 
 final class Dictionary  extends Volume {
     private string $editor;

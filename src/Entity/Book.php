@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Entity;
+namespace App\src\Entity;
 
-final class Book extends Volume {
+final class Book extends Volume
+{
     private int $available = 1;
 
     public function __construct(string $title, string $author)
@@ -13,8 +14,8 @@ final class Book extends Volume {
 
     /**
      * Get the value of available
-     */ 
-    public function getAvailable() : int 
+     */
+    public function getAvailable(): int
     {
         return $this->available;
     }
@@ -23,15 +24,16 @@ final class Book extends Volume {
      * Set the value of available
      *
      * @return  self
-     */ 
-    public function setAvailable(int $available) : self
+     */
+    public function setAvailable(int $available): self
     {
         $this->available = $available;
 
         return $this;
     }
 
-    public function isBorrowable() : bool {
+    public function isBorrowable(): bool
+    {
         return $this->available;
     }
 }

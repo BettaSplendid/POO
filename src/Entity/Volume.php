@@ -1,7 +1,9 @@
 <?php
-namespace App\Entity;
 
-abstract class Volume extends Document{
+namespace App\src\Entity;
+
+abstract class Volume extends Document
+{
     private string $author;
 
     public function __construct(string $title, string $author)
@@ -12,8 +14,8 @@ abstract class Volume extends Document{
 
     /**
      * Get the value of author
-     */ 
-    public function getAuthor() : string
+     */
+    public function getAuthor(): string
     {
         return $this->author;
     }
@@ -22,7 +24,7 @@ abstract class Volume extends Document{
      * Set the value of author
      *
      * @return  self
-     */ 
+     */
     public function setAuthor($author)
     {
         $this->author = $author;

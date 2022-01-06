@@ -1,20 +1,18 @@
-<?php 
+<?php
 
 namespace App;
+
+use App\Entity\Book;
+use App\Entity\Emprunt;
+
+
 require_once('vendor/autoload.php');
 
 
+// $lapin = new Emprunt();
+// var_dump($lapin);
 
-
-
-
-
-
-
-
-
-
-
+// new Book();
 
 
 

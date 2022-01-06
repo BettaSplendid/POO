@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Entity;
+namespace App\src\Entity;
 
-use App\Interface\UserInterface;
+// use App\Interface\UserInterface;
 
-abstract class Member implements UserInterface
+abstract class Member
+// abstract class Member implements UserInterface
 {
 
     private string $id;
@@ -69,9 +70,8 @@ abstract class Member implements UserInterface
 
         return $this;
     }
-    
+
     public function returnBook(): void
     {
-        
     }
 }

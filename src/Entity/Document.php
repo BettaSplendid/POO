@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity;
+namespace App\src\Entity;
 
 abstract class Document {
     private string $title;

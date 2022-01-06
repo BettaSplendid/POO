@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\src\Entity;
 
 final class Visitor extends Member {
 

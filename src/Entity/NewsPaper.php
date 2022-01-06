@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity;
+namespace App\src\Entity;
 
 // Alias
 use \DateTimeImmutable as dateImmut;

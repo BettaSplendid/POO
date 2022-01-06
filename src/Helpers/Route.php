@@ -1,5 +1,5 @@
 <?php 
-namespace App\Helpers;
+namespace App\src\Helpers;
 
 class Route {
     private $tutu;
