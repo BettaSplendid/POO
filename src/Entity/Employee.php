@@ -2,8 +2,14 @@
 
 namespace App\src\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
 final class Employee extends Member {
 
+    /** @Column(type="integer") */
     private int $badge_number;
 
     public function __construct(string $l, string $f, int $b_n)

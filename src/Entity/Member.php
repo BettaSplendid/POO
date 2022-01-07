@@ -5,12 +5,13 @@ namespace App\src\Entity;
 // use App\Interface\UserInterface;
 
 
-use Doctrine\ORM\Mapping\Entity;
+
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\GeneratedValue;
 
-/** @Entity */
+use Doctrine\ORM\Mapping as ORM;
+
 abstract class Member
 // abstract class Member implements UserInterface
 {
@@ -20,7 +21,15 @@ abstract class Member
      * @GeneratedValue
      */
     private $id;
+
+    /**
+     * @Column(length=140) 
+     */
     private string $lastname;
+
+    /**
+     * @Column(length=140)
+     */
     private string $firstname;
 
 
@@ -85,4 +94,14 @@ abstract class Member
     public function returnBook(): void
     {
     }
+
+    // public function addMemberToDbtest()
+    // {
+    //     $queryBuilder
+    //     ->select('id', 'name')
+    //     ->from('users')
+    //     ->where('email = ?')
+    //     ->setParameter(0, $userInputEmail)
+    // ;
+    // }
 }

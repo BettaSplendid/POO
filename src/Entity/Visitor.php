@@ -2,34 +2,39 @@
 
 namespace App\src\Entity;
 
-final class Visitor extends Member {
+use Doctrine\ORM\Mapping as ORM;
 
-    private string $piece_ident; 
+/**
+ * @ORM\Entity
+ */
+final class Visitor extends Member
+{
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private string $piece_ident;
 
     public function __construct(string $l, string $f, int $piece_ident)
     {
         parent::__construct($l, $f);
-        
+
         $this->piece_ident = $piece_ident;
-        
     }
 
-    public function getPieceIdent() : string
+    public function getPieceIdent(): string
     {
         return $this->piece_ident;
     }
 
-    public function setPieceIdent(int $new_value) : self
+    public function setPieceIdent(int $new_value): self
     {
         $this->piece_ident = $new_value;
 
         return $this;
     }
 
-    public function borrowBook(Book $book) : void
+    public function borrowBook(Book $book): void
     {
-        
     }
-
-
 }

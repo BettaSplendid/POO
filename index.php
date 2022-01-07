@@ -1,40 +1,21 @@
 <?php
 
 namespace App;
-
-use App\Entity\Book;
-use App\Entity\Emprunt;
-
-
 require_once('vendor/autoload.php');
+require_once('bootstrap.php');
+
+use App\src\Entity\Book;
+use App\src\Entity\Bd;
+use App\Entity\Emprunt;
+use App\EntityManager;
 
 
-// $lapin = new Emprunt();
+
+// // new book();
+// $lapin = new Book("La vie des lapins", "Mr Lapinot");
 // var_dump($lapin);
+// $entityManager->persist($lapin);
+// $entityManager->flush();
 
-// new Book();
-
-
-
-
-
-
-
-
-
-
-// // print(phpinfo());
-
-// $library = new Library("Library JASOR");
-// $v1 = new Visitor('DUPONT', 'Jean', 49274729);
-// $response = $library->AddMember($v1);
-
-// print($response);
-
-// var_dump(Library::getMembers());
-
-// print("\n </br>");
-
-// $library->RemoveMember($v1);
-
-// var_dump(Library::getMembers());
+$jhh = new Bd("Lapin","lapino","lapino");
+var_dump($jhh);

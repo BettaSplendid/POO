@@ -2,13 +2,33 @@
 
 namespace App\src\Entity;
 
+require_once("bootstrap.php");
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+
 final class Book extends Volume
 {
+
+
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private string $id;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private int $available = 1;
 
-    public function __construct(string $title, string $author)
+    public function __construct(int $id, string $title, string $author)
     {
-        parent::__construct($title, $author);
+        parent::__construct($id, $title, $author);
     }
 
 
@@ -36,4 +56,16 @@ final class Book extends Volume
     {
         return $this->available;
     }
+
+    // public function addBookToDatabase(): void
+    // {
+    //     $entityManager->persist($product);
+    //     $entityManager->flush();
+    // }
 }
+
+// $lapin = new book("La vie des lapins", "Mr Lapinot");
+// $vache = new book("La vie des vaches", "Mr Vachino");
+
+// $entityManager->persist($lapin, $vache);
+// $entityManager->flush();
