@@ -9,6 +9,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 final class Library
 {
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
+     */
+    protected int $id3;
+
     private array $memberList = [];
     private array $documentList = [];
     

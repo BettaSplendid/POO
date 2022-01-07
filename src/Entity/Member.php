@@ -2,33 +2,28 @@
 
 namespace App\src\Entity;
 
-// use App\Interface\UserInterface;
-
-
-
-use Doctrine\ORM\Mapping\Id;
-use Doctrine\ORM\Mapping\Column;
-use Doctrine\ORM\Mapping\GeneratedValue;
-
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\MappedSuperClass
+ */
+
 abstract class Member
-// abstract class Member implements UserInterface
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
-    private $id;
+    public int $id;
 
     /**
-     * @Column(length=140) 
+     * @ORM\Column(length=140) 
      */
     private string $lastname;
 
     /**
-     * @Column(length=140)
+     * @ORM\Column(length=140)
      */
     private string $firstname;
 
@@ -40,7 +35,6 @@ abstract class Member
 
         $this->id = random_int(1, 99999);
     }
-
 
     /**
      * Get the value of id

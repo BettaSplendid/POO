@@ -20,9 +20,9 @@ final class NewsPaper extends Document
 
     private dateImmut $release_date;
 
-    public function __construct(int $id, string $title, dateImmut $d)
+    public function __construct(string $title, dateImmut $d)
     {
-        parent::__construct($id, $title);
+        parent::__construct($title);
         $this->release_date = $d;
     }
 

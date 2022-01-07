@@ -2,8 +2,6 @@
 
 namespace App\src\Entity;
 
-require_once("bootstrap.php");
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,11 +11,14 @@ use Doctrine\ORM\Mapping as ORM;
 final class Bd extends Volume
 {
 
+   /**
+    * @ORM\Column(type="string")
+    */
    private string $designer;
 
-   public function __construct(int $id, string $title, string $auteur, string $designer)
+   public function __construct(string $title, string $auteur, string $designer)
    {
-      parent::__construct($id, $title, $auteur);
+      parent::__construct($title, $auteur);
       $this->designer = $designer;
    }
 

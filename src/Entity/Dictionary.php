@@ -16,9 +16,9 @@ final class Dictionary  extends Volume
      */
     private string $editor;
 
-    public function __construct(string $editor, string $auteur, string $title, int $id)
+    public function __construct(string $editor, string $auteur, string $title)
     {
-        parent::__construct($title, $auteur, $id);
+        parent::__construct($title, $auteur );
         $this->editor = $editor;
     }
 

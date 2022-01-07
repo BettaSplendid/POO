@@ -14,21 +14,15 @@ final class Book extends Volume
 {
 
 
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private string $id;
 
     /**
      * @ORM\Column(type="integer")
      */
     private int $available = 1;
 
-    public function __construct(int $id, string $title, string $author)
+    public function __construct(string $title, string $author)
     {
-        parent::__construct($id, $title, $author);
+        parent::__construct($title, $author);
     }
 
 

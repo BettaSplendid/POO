@@ -2,7 +2,6 @@
 
 namespace App\src\Entity;
 
-require_once("bootstrap.php");
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -14,9 +13,9 @@ abstract class Volume extends Document
      */
     private string $author;
 
-    public function __construct(int $id, string $title, string $author)
+    public function __construct(string $title, string $author)
     {
-        parent::__construct($id, $title);
+        parent::__construct($title);
         $this->author = $author;
     }
 

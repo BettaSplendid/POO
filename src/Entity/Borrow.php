@@ -3,7 +3,8 @@
 namespace App\src\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\src\Entity\member;
+use App\src\Entity\Member;
+use app\src\Entity\Book;
 use \DateTime;
 
 /**
@@ -23,24 +24,43 @@ class Borrow
     private string $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="datetime")
      */
-
     private DateTime $borrowDate;
 
+    /**
+     * @ORM\Column(length="8")
+     */
     private string $return_date;
 
+    /**
+     * @ORM\Column(length="8")
+     */
     private string $delay;
 
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Member")
-     */
 
-    private Member $member;
+    //  @ORM\JoinColumn(name="document_id", referencedColumnName="doc_id")
+    // @ORM\JoinColumn(name="visitor_id", referencedColumnName="mem_id")
 
     /**
-     * @ORM\ManyToOne(targetEntity="Book")
+     * @ORM\ManyToOne(targetEntity="Document")
+     * @ORM\JoinColumn(nullable=true, referencedColumnName="id")
      */
-    private Book $boook;
+    private Document $document;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="visitor" )
+     * @ORM\JoinColumn(nullable=true, referencedColumnName="id")
+     */
+
+    private Visitor $visitor;
+
+
+    public function __construct(DateTime $borrowDate, Document $document, Visitor $visitor)
+    {
+        $this->borrowDate = $borrowDate;
+        $this->document = $document;
+        $this->visitor = $visitor;
+    }
 }

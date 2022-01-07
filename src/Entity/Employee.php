@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 final class Employee extends Member {
 
-    /** @Column(type="integer") */
+    /** @ORM\Column(type="integer") */
     private int $badge_number;
 
     public function __construct(string $l, string $f, int $b_n)

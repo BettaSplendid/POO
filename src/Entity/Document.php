@@ -2,9 +2,12 @@
 
 namespace App\src\Entity;
 
-require_once("bootstrap.php");
 
 use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\MappedSuperClass
+ */
 abstract class Document
 {
 
@@ -14,14 +17,13 @@ abstract class Document
      * @ORM\GeneratedValue
      */
     private int $id;
-    
+
     /** @ORM\Column(type="string") */
     private string $title;
 
 
-    public function __construct(int $id, string $title)
+    public function __construct(string $title)
     {
-        $this->id = $id;
         $this->title = $title;
     }
 
